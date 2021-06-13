@@ -31,18 +31,19 @@
         </div>
       </header>
 
+      
+
     <div class="orders-list-container">
-        
     <div class="orders-list-items">
 
-      <% results.forEach(function(result){%>
-      <div class="order-card-container">
-          <h3 class="order-card-title">
+    <% results.forEach(function(result){%>
+      <div onclick="openModal(id);" class="order-card-container" id="<%=result.id%>">
+          <h3 class="order-card-title" id="<%=result.id%>">
               <%=result.name%>
           </h3>
-          <img src=<%= result.image_uri %> class="order-card-image" alt="imagem cartao">
+          <img src=<%= result.image_uri %> class="order-card-image" alt="imagem cartao" id="<%=result.id%>">
 
-          <h3 class="order-card-price">
+          <h3 class="order-card-price" id="price-<%=result.id%>">
             R$ <%=result.price%>
           </h3>
           <div class="order-card-description">
@@ -54,7 +55,55 @@
       </div>
     <%});%>
 
+    
+
+
+
     </div>
+    </div>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="modal-container">
+                <div class="modal-img">
+                    <img class="image-modal" src="https://raw.githubusercontent.com/devsuperior/sds2/master/assets/risoto_carne.jpg" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="marmita-form">
+                      <div class="marmita-form-header">
+                        <label for="marmita-form" class="marmita-form-header-label"> Algum comentário?</label>
+                        <span id="coment-count" class="marmita-form-counter">0 / 140</span>
+                      </div>
+                      <textarea id="marmita-form"
+                                onkeyup="limite_textarea(this.value)"
+                                maxlength="140"
+                                rows="4"
+                                cols="51"
+                                class="marmita-form-textarea"
+                                placeholder="Ex: tirar a cebola, maionese á parte etc."></textarea>
+                      
+                      <div class="marmita-counter-add">
+                        <div class="quantity">
+                          <div class="minus-counter-plus">
+                      <div onclick="decrement();subtract()" class="btn-counter"> - </div>
+                      <div id="marmita-counter-value">1</div>
+                      <div onclick="increment();somar()" class="btn-counter"> + </div>
+                            </div>
+                        </div>
+                      <div class="marmita-counter">
+                        <button class="btn-add">
+                            <span class="btn-span-add">Adicionar</span>
+                            <span id="btn-span-total">R$ 12,00</span>
+                      </button>
+                        </div>
+                      
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+        </div>
     </div>
 
 <div class="order-summary-container">

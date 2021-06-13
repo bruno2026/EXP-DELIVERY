@@ -358,6 +358,131 @@ text-decoration: none;
   }
 
 
+  .modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+    
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: #F0F2f5;
+    padding: 2.4rem;
+    position: relative;
+    z-index: 999;
+    border-radius: 10px;
+}
+
+.marmita-form-textarea {
+  width: 100%;
+  border-radius:10px;
+  outline: none;
+}
+
+.marmita-counter-add {
+  padding-top: 1rem;
+}
+
+.minus-counter-plus{
+  display:flex;
+  justify-content:center;
+  height:2.5rem;
+}
+.marmita-counter {
+  padding-top:2rem;
+}
+
+#marmita-counter-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding-top:0.6rem;
+    padding-right:1rem;
+    padding-left:1rem;
+}
+
+.marmita-form-header-label {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #717171;
+}
+
+.marmita-form-counter {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #717171;
+}
+
+.modal-img {
+  padding-right: 2rem;
+}
+.image-modal {
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.btn-add {
+border: none;
+font-weight: 800;
+background-color: #da5c5c;
+color:white;
+border-radius: 10px;
+width: 100%;
+height:2.5rem;
+  
+}
+
+.btn-counter {
+  color: white;
+  background-color:#da5c5c;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding:1rem;
+  
+  
+  display:flex;
+  align-items:center;
+  justify-content: center;
+}
+
+.btn-span-add {
+  padding-right:0.3rem;
+}
+
+  
+
+.btn-add:hover{
+background-color: #da5c5c;
+transform: scale(1.01);
+cursor: pointer;
+}
+
+.btn-counter:hover{
+background-color: #da5c5c;
+transform: scale(1.01);
+}
+
+
+
+
+
   @media only screen and (max-width: 768px) {
     .orders-steps-content {
       display: flex;
@@ -388,6 +513,7 @@ text-decoration: none;
       width: 100%;
     }
   }
+
 
 
   /* FOOTER*/

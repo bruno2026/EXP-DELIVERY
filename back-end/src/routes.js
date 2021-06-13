@@ -4,6 +4,12 @@ const routes = express.Router();
 const Orders = require('./models/Orders');
 
 
+function teste() {
+    console.log("teste")
+}
+
+
+
 routes.get('/', (req, res) => res.render("index"));
 
 routes.get('/orders/findall', OrdersController.list)
