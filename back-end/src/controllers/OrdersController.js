@@ -12,5 +12,11 @@ module.exports = {
         const order = await Orders.create({name, price, description, image_uri});
         
         return res.json(order);
+    },
+    async listOne(id) {
+        
+        const item = await Orders.findByPk(id);
+
+        return res.json(item);
     }
 };

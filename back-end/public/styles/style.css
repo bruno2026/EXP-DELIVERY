@@ -95,6 +95,11 @@ text-decoration: none;
     outline: none;
   }
   
+  .home-btn-order a{
+    
+    text-decoration: none;
+  }
+  
   .home-btn-order:hover {
     background-color: var(--primary-hover-color);
     transform: scale(1.01);
@@ -214,8 +219,8 @@ text-decoration: none;
   }
   
   .order-card-container.selected {
-    border: 4px solid #008E5B;
-    box-sizing: border-box;
+    border: 4px solid var(--primary-color);
+    /* box-sizing: border-box; */
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
   }
@@ -232,10 +237,19 @@ text-decoration: none;
     color: var(--primary-color);
     text-align: center;
   }
-  
-  .order-card-container.selected .order-card-title {
-    color: #008E5B;
+
+  .order-card-title-modal{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: -0.015em;
+    color: var(--primary-color);
+    text-align: center;
   }
+  
+  /* .order-card-container.selected .order-card-title {
+    color: #008E5B;
+  } */
   
   .order-card-image {
     border-radius: 10px;
@@ -251,11 +265,12 @@ text-decoration: none;
     letter-spacing: -0.015em;
     color: var(--primary-color);
     text-align: left;
+    padding-right: 0.5rem;
   }
   
-  .order-card-container.selected .order-card-price {
+  /* .order-card-container.selected .order-card-price {
     color: #008E5B;
-  }
+  } */
   
   .order-card-description {
     border-top: 1px solid #E6E6E6;
@@ -307,7 +322,7 @@ text-decoration: none;
     margin-bottom: 10px;
   }
   
-  .amount-selected {
+  #amount-selected-total {
     font-weight: bold;
     font-size: 16px;
     line-height: 15px;
@@ -376,14 +391,15 @@ text-decoration: none;
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
+    
 }
 
 .modal {
     background: #F0F2f5;
-    padding: 2.4rem;
+    padding: 1.4rem;
     position: relative;
     z-index: 999;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .marmita-form-textarea {
@@ -429,9 +445,9 @@ text-decoration: none;
   padding-right: 2rem;
 }
 .image-modal {
-  border-radius: 10px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -536,3 +552,121 @@ transform: scale(1.01);
   .footer-icons > * {
     margin-right: 5px;
   }
+
+
+
+  /* TESTE */
+
+  
+    
+    .order-card-price_container {
+      display:flex;
+       align-items: center;
+       
+      
+    }
+    
+    .marmita-counter{
+      display: flex;
+      align-items: center;
+      
+      width: 5.8rem;
+      height: 1.5rem;
+      /* background-color: var(--primary-color); */
+      border-radius: 5rem;
+
+      padding-left: 1rem;
+      padding-top:0.1rem;
+    }
+
+    .marmita-counter.selected{
+      display: flex;
+      align-items: center;
+      
+      width: 5.8rem;
+      height: 1.5rem;
+      background-color: #008E5B;
+      border-radius: 5rem;
+
+      padding-left: 1rem;
+      padding-top:0.1rem;
+    }
+
+    
+
+    .btn-icon{
+      cursor: default;
+      color: var(--primary-color);
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+
+  }
+  .btn-icon.selected{
+    cursor: default;
+    background: #008E5B;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem; 
+}
+  
+
+  .marmita-counter-value{
+    /* padding-left:0.3rem; */ 
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 18px;
+    color: var(--primary-color);
+    /* background-color:blue; */
+}
+
+.minus{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 18px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.plus{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 18px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+
+
+/* teste imagem carrinho */
+
+.teste-img{
+  width: 1.9rem;
+      height: 1.6rem;
+      
+}
+
+.btn-marmita-cart {
+      display: flex;  
+      align-items: center;
+      width: 12.8rem;
+      height: 2.5rem;
+      background-color: var(--primary-color);
+      border: none;
+      border-radius:1rem;
+      cursor: pointer;
+      
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    color: #F4F4F7;
+}
+
+.btn-marmita-cart:hover {
+  transform: scale(1.01);
+}
+
+
+    

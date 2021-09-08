@@ -37,15 +37,67 @@
     <div class="orders-list-items">
 
     <% results.forEach(function(result){%>
-      <div onclick="openModal(id);" class="order-card-container" id="<%=result.id%>">
-          <h3 class="order-card-title" id="<%=result.id%>">
+
+      <div class="order-card-container " id="<%=result.id%>">
+          <h3 class="order-card-title" id="title-<%=result.id%>">
               <%=result.name%>
           </h3>
-          <img src=<%= result.image_uri %> class="order-card-image" alt="imagem cartao" id="<%=result.id%>">
+          <img src=<%= result.image_uri %> class="order-card-image" alt="imagem cartao" id="img-<%=result.id%>">
+          
 
-          <h3 class="order-card-price" id="price-<%=result.id%>">
-            R$ <%=result.price%>
-          </h3>
+          <div class="order-card-price_container">
+
+           <% let ValueFormatado = result.price;
+              let formated = ValueFormatado.toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL"
+              });  %>
+              <h3 class="order-card-price" id="price-<%=result.id%>">
+                <%= formated %> 
+              </h3>
+              
+  
+                        
+                <div class="marmita-counter">               
+                  
+                  <div type="button" class="btn-icon">
+                    <span onclick="decrement(id); subtrair('<%=result.price%>','<%=result.id%>'); totalValue()" id="<%=result.id%>" class="minus">-</span>
+                  </div>
+                    
+                 <div class="marmita-counter-value" id="counter-<%=result.id%>">01</div>
+                 
+                  <div type="button" class="btn-icon">
+                    
+                   <span onclick="somar('<%=result.price%>','<%=result.id%>' ); increment('<%=result.id%>'); totalValue()"  class="plus">+</span>
+                   
+                  </div>
+                  
+                </div>
+                  </div>
+
+
+                  <button onclick="selectItem('<%=result.price%>',id);totalValue(id)" class="btn-marmita-cart" id="<%=result.id%>">
+                    <div id="btn-marmita-cart-text-<%= result.id %>">Adicionar ao carrinho</div>
+                    <img class="teste-img" src="/assets/cart.png" alt="Imagem carrinho">
+                  </button>
+
+                  <!-- <div class="marmita-cart-container">
+                    <div class="marmita-cart-text">Adicionar</div>
+                    <div class="marmita-cart-img">
+                      <img class="teste-img" src="/assets/cart.png" alt="Imagem carrinho">
+                    </div>
+                    
+                  </div> -->
+
+
+
+
+
+                  
+
+                  
+        
+          
           <div class="order-card-description">
               <h3>Descrição</h3>
               <p>
@@ -62,11 +114,12 @@
     </div>
     </div>
 
-    <div class="modal-overlay">
+    <!-- <div class="modal-overlay">
         <div class="modal">
             <div class="modal-container">
+                <div class="order-card-title-modal"></div>
                 <div class="modal-img">
-                    <img class="image-modal" src="https://raw.githubusercontent.com/devsuperior/sds2/master/assets/risoto_carne.jpg" alt="">
+                    <img class="image-modal" src="" alt="imagem cartao">
                   </div>
                   <div class="content">
                     <div class="marmita-form">
@@ -91,7 +144,7 @@
                             </div>
                         </div>
                       <div class="marmita-counter">
-                        <button class="btn-add">
+                        <button onclick="closeModal();addProduct();saveOrder()" class="btn-add">
                             <span class="btn-span-add">Adicionar</span>
                             <span id="btn-span-total">R$ 12,00</span>
                       </button>
@@ -104,17 +157,17 @@
               </div>
               
         </div>
-    </div>
+    </div> -->
 
 <div class="order-summary-container">
     <div class="order-summary-content">
         <div>
             <span class="amount-selected-container">
-                <strong class="amount-selected">0</strong>
+                <strong id="amount-selected">0</strong>
         PEDIDOS SELECIONADOS
     </span>
             <span className="order-summary-total">
-                <strong class="amount-selected">
+                <strong id="amount-selected-total">
                     R$ 0,00
                     </strong>
         VALOR TOTAL
@@ -138,6 +191,6 @@
         <p>by Bruno gomes</p><br>
         <p>App desenvolvido para vendas do restaurante explosão de sabores</p>
     </footer>
-    <script src="/scripts/script.js"></script>
+    <script  src="/scripts/script.js"></script>
 </body>
 </html>
